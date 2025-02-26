@@ -11,6 +11,12 @@ ARGS=[
         default_value='false',
         description='Enable NTRIP client',
     ),
+    
+    DeclareLaunchArgument(
+        'eval',
+        default_value='false',
+        description='Enable evaluation node',
+    ),
 ]
 
 
@@ -35,5 +41,14 @@ def generate_launch_description():
             executable='ublox_gps_node',
             output='both',
             parameters=[gps_config_path]
+        ),
+        
+        Node(
+            condition=IfCondition(LaunchConfiguration('eval')),
+            package='gnss_eval_ros',
+            executable='gnss_eval',
+            name='gnss_eval',
+            parameters=[gps_config_path],
+            remappings=[('/fix', '/fix')]
         ),
     ])
