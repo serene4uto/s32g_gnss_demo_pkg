@@ -49,6 +49,6 @@ def generate_launch_description():
             executable='gnss_eval',
             name='gnss_eval',
             parameters=[gps_config_path],
-            remappings=[('/fix', '/fix')]
+            remappings=[('/fix', '/ublox_gps_node/fix')]
         ),
     ])

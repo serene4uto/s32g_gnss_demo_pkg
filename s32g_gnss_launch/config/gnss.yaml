@@ -42,7 +42,7 @@
   ublox_gps_node:
     ros__parameters:
       config_on_startup: true
-      debug: 4                    # Range 0-4 (0 means no debug statements will print)
+      debug: 0                    # Range 0-4 (0 means no debug statements will print)
       device: /dev/ttyACM0
       frame_id: gps_link
       uart1:
@@ -56,7 +56,7 @@
         qzss: true              
 
       dynamic_model: portable    # Dynamic Platform Model
-      rate: 10.0
+      rate: 17.0
       nav_rate: 1
       fix_mode: auto
       # TMODE3 Config
@@ -81,7 +81,7 @@
   gnss_eval:
     ros__parameters:
       ground_truth:
-        latitude: 35.97237383
-        longitude: 128.93865707
+        latitude: 36.111165
+        longitude: 128.384271
         altitude: 0.0
       log_enable: true
